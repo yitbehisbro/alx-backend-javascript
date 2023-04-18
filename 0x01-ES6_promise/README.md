@@ -1,1 +1,3 @@
-README contents will be added soon!
+## 0x01. ES6 Promises
+### Tasks
+

@@ -4,8 +4,12 @@ const getFullBudgetObject = (income, gdp, capita) => {
   const budget = getBudgetObject(income, gdp, capita);
   const fullBudget = {
     ...budget,
-    getIncomeInDollars: () => `$${income}`,
-    getIncomeInEuros: () => `${income} euros`,
+    getIncomeInDollars() {
+      return `$${income}`;
+    },
+    getIncomeInEuros() {
+      return `${income} euros`;
+    },
   };
 
   return fullBudget;

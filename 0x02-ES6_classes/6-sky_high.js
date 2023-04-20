@@ -14,7 +14,7 @@ export default class extends Building {
     return this._floors;
   }
 
-  evacuationWarningMessage() {
+  static evacuationWarningMessage() {
     return `Evacuate slowly the ${this._floors} floors.`;
   }
 }

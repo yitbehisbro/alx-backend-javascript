@@ -1,35 +1,29 @@
-interface Student {
-  firstName: string;
-  lastName: string;
-  age: number;
+class Teacher {
+  readonly firstName: string;
+  readonly lastName: string;
+  fullTimeEmployee: boolean;
+  yearsOfExperience?: number;
   location: string;
+  [key: string]: any;
+
+  constructor(
+    firstName: string,
+    lastName: string,
+    fullTimeEmployee: boolean,
+    location: string,
+    yearsOfExperience?: number
+  ) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.fullTimeEmployee = fullTimeEmployee;
+    this.location = location;
+    if (yearsOfExperience) {
+      this.yearsOfExperience = yearsOfExperience;
+    }
+  }
 }
 
-const student1: Student = {
-  firstName: 'John',
-  lastName: 'Doe',
-  age: 20,
-  location: 'New York',
-};
+const teacher1 = new Teacher('John', 'Doe', true, 'New York', 5);
+teacher1.contract = true;
 
-const student2: Student = {
-  firstName: 'Jane',
-  lastName: 'Doe',
-  age: 22,
-  location: 'Los Angeles',
-};
-
-const studentsList: Array<Student> = [student1, student2];
-
-const body: HTMLElement = document.getElementsByTagName('body')[0];
-const table: HTMLTableElement = document.createElement('table');
-const tbody: HTMLElement = document.createElement('tbody');
-
-table.appendChild(tbody);
-body.appendChild(table);
-
-studentsList.forEach((student) => {
-  const row: HTMLElement = document.createElement('tr');
-  row.innerHTML = `<td>${student.firstName}</td><td>${student.location}</td>`;
-  tbody.appendChild(row);
-});
+console.log(teacher1);
